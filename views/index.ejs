@@ -1,0 +1,1730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+    <title>Interpret Lingo</title>
+</head>
+
+<body class="bg-[#111111]">
+    <nav class="flex justify-between items-center bg-[#1565c0] p-1 md:p-4">
+        <div class="logo">
+            <img class=" w-6 rounded-xl md:w-9" src="images/favicon.svg" alt="logo">
+        </div>
+        <div class="brand text-white font-serif text-xs md:text-4xl">Interpret Lingo</div>
+        <div class="repo">
+            <a href="https://github.com/Kenshi2727/Interpret-Lingo.git"><img class=" w-6 md:w-9 rounded-full"
+                    src="images/repo.jpeg" alt="repo link"></a>
+        </div>
+    </nav>
+
+    <div class="h-svh translate flex flex-col justify-center items-center gap-y-4 md:gap-y-12 xl:gap-y-14">
+        <h1 class="font-serif text-white text-3xl mb-3 md:mb-0 md:hidden">Interpret Lingo</h1>
+        <h1 class="font-serif text-white text-3xl mb-3 md:mb-0 hidden md:block lg:text-4xl">Interpret Lingo-NLP Powered
+            Language Translator</h1>
+
+        <div class="translate flex flex-col md:flex-row gap-y-2 md:gap-x-12">
+            <div class="translate-from">
+                <div class="translate-from-button flex gap-2">
+                    <p class="font-serif text-white my-2 lg:text-xl">Translate From:</p>
+                    <!-- component -->
+                    <!-- First Dropdown (Translate From) -->
+                    <div class="dropdown-container-from">
+                        <button
+                            class="languages font-serif text-white my-2 lg:text-xl underline underline-offset-4 font-medium rounded-lg text-center inline-flex items-center"
+                            type="button" data-dropdown-toggle="dropdownFrom">
+                            <% if(locals.lang){ %>
+                                <%= locals.lang %>
+                                    <% }else{ %>
+                                        Select Language!
+                                        <%} %><svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 9l-7 7-7-7"></path>
+                                            </svg>
+                        </button>
+
+                        <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4"
+                            id="dropdownFrom">
+                            <ul class="py-1" aria-labelledby="dropdownFrom">
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">af</textarea>
+                                        <input type="submit" name="lang" value="Afrikaans">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">sq</textarea>
+                                        <input type="submit" name="lang" value="Albanian">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">am</textarea>
+                                        <input type="submit" name="lang" value="Amharic">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ar</textarea>
+                                        <input type="submit" name="lang" value="Arabic">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">hy</textarea>
+                                        <input type="submit" name="lang" value="Armenian">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">az</textarea>
+                                        <input type="submit" name="lang" value="Azerbaijani">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ba</textarea>
+                                        <input type="submit" name="lang" value="Bashkir">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">eu</textarea>
+                                        <input type="submit" name="lang" value="Basque">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">be</textarea>
+                                        <input type="submit" name="lang" value="Belarusian">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">bn</textarea>
+                                        <input type="submit" name="lang" value="Bengali">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">bs</textarea>
+                                        <input type="submit" name="lang" value="Bosnian">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">bg</textarea>
+                                        <input type="submit" name="lang" value="Bulgarian">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">my</textarea>
+                                        <input type="submit" name="lang" value="Burmese">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ca</textarea>
+                                        <input type="submit" name="lang" value="Catalan">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ceb</textarea>
+                                        <input type="submit" name="lang" value="Cebuano">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ny</textarea>
+                                        <input type="submit" name="lang" value="Chichewa">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">zh-CN</textarea>
+                                        <input type="submit" name="lang" value="Chinese (Simplified)">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">zh-TW</textarea>
+                                        <input type="submit" name="lang" value="Chinese (Traditional)">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">co</textarea>
+                                        <input type="submit" name="lang" value="Corsican">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">hr</textarea>
+                                        <input type="submit" name="lang" value="Croatian">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">cs</textarea>
+                                        <input type="submit" name="lang" value="Czech">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">da</textarea>
+                                        <input type="submit" name="lang" value="Danish">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">nl</textarea>
+                                        <input type="submit" name="lang" value="Dutch">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">en</textarea>
+                                        <input type="submit" name="lang" value="English">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">eo</textarea>
+                                        <input type="submit" name="lang" value="Esperanto">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">et</textarea>
+                                        <input type="submit" name="lang" value="Estonian">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">fi</textarea>
+                                        <input type="submit" name="lang" value="Finnish">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">fr</textarea>
+                                        <input type="submit" name="lang" value="French">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">fy</textarea>
+                                        <input type="submit" name="lang" value="Frisian">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">gl</textarea>
+                                        <input type="submit" name="lang" value="Galician">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ka</textarea>
+                                        <input type="submit" name="lang" value="Georgian">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">de</textarea>
+                                        <input type="submit" name="lang" value="German">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">el</textarea>
+                                        <input type="submit" name="lang" value="Greek">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">gu</textarea>
+                                        <input type="submit" name="lang" value="Gujarati">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ht</textarea>
+                                        <input type="submit" name="lang" value="Haitian Creole">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ha</textarea>
+                                        <input type="submit" name="lang" value="Hausa">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">haw</textarea>
+                                        <input type="submit" name="lang" value="Hawaiian">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">iw</textarea>
+                                        <input type="submit" name="lang" value="Hebrew">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">mrj</textarea>
+                                        <input type="submit" name="lang" value="Hill Mari">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">hi</textarea>
+                                        <input type="submit" name="lang" value="Hindi">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">hmn</textarea>
+                                        <input type="submit" name="lang" value="Hmong">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">hu</textarea>
+                                        <input type="submit" name="lang" value="Hungarian">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">is</textarea>
+                                        <input type="submit" name="lang" value="Icelandic">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ig</textarea>
+                                        <input type="submit" name="lang" value="Igbo">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">id</textarea>
+                                        <input type="submit" name="lang" value="Indonesian">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ga</textarea>
+                                        <input type="submit" name="lang" value="Irish">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">it</textarea>
+                                        <input type="submit" name="lang" value="Italian">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ja</textarea>
+                                        <input type="submit" name="lang" value="Japanese">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">jw</textarea>
+                                        <input type="submit" name="lang" value="Javanese">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">kn</textarea>
+                                        <input type="submit" name="lang" value="Kannada">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">kk</textarea>
+                                        <input type="submit" name="lang" value="Kazakh">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">km</textarea>
+                                        <input type="submit" name="lang" value="Khmer">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ko</textarea>
+                                        <input type="submit" name="lang" value="Korean">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ku</textarea>
+                                        <input type="submit" name="lang" value="Kurdish">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ky</textarea>
+                                        <input type="submit" name="lang" value="Kyrgyz">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">lo</textarea>
+                                        <input type="submit" name="lang" value="Lao">
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">la</textarea>
+                                        <input type="submit" name="lang" value="Latin">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">lv</textarea>
+                                        <input type="submit" name="lang" value="Latvian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">lt</textarea>
+                                        <input type="submit" name="lang" value="Lithuanian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">lb</textarea>
+                                        <input type="submit" name="lang" value="Luxembourgish">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">mk</textarea>
+                                        <input type="submit" name="lang" value="Macedonian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">mg</textarea>
+                                        <input type="submit" name="lang" value="Malagasy">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ms</textarea>
+                                        <input type="submit" name="lang" value="Malay">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ml</textarea>
+                                        <input type="submit" name="lang" value="Malayalam">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">mt</textarea>
+                                        <input type="submit" name="lang" value="Maltese">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">mi</textarea>
+                                        <input type="submit" name="lang" value="Maori">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">mr</textarea>
+                                        <input type="submit" name="lang" value="Marathi">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">mhr</textarea>
+                                        <input type="submit" name="lang" value="Mari">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">mn</textarea>
+                                        <input type="submit" name="lang" value="Mongolian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ne</textarea>
+                                        <input type="submit" name="lang" value="Nepali">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">no</textarea>
+                                        <input type="submit" name="lang" value="Norwegian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ps</textarea>
+                                        <input type="submit" name="lang" value="Pashto">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">pap</textarea>
+                                        <input type="submit" name="lang" value="Papiamento">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">fa</textarea>
+                                        <input type="submit" name="lang" value="Persian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">pl</textarea>
+                                        <input type="submit" name="lang" value="Polish">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">pt</textarea>
+                                        <input type="submit" name="lang" value="Portuguese">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">pa</textarea>
+                                        <input type="submit" name="lang" value="Punjabi">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ro</textarea>
+                                        <input type="submit" name="lang" value="Romanian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ru</textarea>
+                                        <input type="submit" name="lang" value="Russian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">sm</textarea>
+                                        <input type="submit" name="lang" value="Samoan">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">gd</textarea>
+                                        <input type="submit" name="lang" value="Scots Gaelic">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">sr</textarea>
+                                        <input type="submit" name="lang" value="Serbian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">st</textarea>
+                                        <input type="submit" name="lang" value="Sesotho">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">sn</textarea>
+                                        <input type="submit" name="lang" value="Shona">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">sd</textarea>
+                                        <input type="submit" name="lang" value="Sindhi">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">si</textarea>
+                                        <input type="submit" name="lang" value="Sinhala">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">sk</textarea>
+                                        <input type="submit" name="lang" value="Slovak">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">sl</textarea>
+                                        <input type="submit" name="lang" value="Slovenian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">so</textarea>
+                                        <input type="submit" name="lang" value="Somali">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">es</textarea>
+                                        <input type="submit" name="lang" value="Spanish">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">su</textarea>
+                                        <input type="submit" name="lang" value="Sundanese">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">sw</textarea>
+                                        <input type="submit" name="lang" value="Swahili">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">sv</textarea>
+                                        <input type="submit" name="lang" value="Swedish">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">tl</textarea>
+                                        <input type="submit" name="lang" value="Tagalog Filipino">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">tg</textarea>
+                                        <input type="submit" name="lang" value="Tajik">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ta</textarea>
+                                        <input type="submit" name="lang" value="Tamil">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">tt</textarea>
+                                        <input type="submit" name="lang" value="Tatar">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">te</textarea>
+                                        <input type="submit" name="lang" value="Telugu">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">th</textarea>
+                                        <input type="submit" name="lang" value="Thai">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">tr</textarea>
+                                        <input type="submit" name="lang" value="Turkish">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">udm</textarea>
+                                        <input type="submit" name="lang" value="Udmurt">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">uk</textarea>
+                                        <input type="submit" name="lang" value="Ukrainian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">ur</textarea>
+                                        <input type="submit" name="lang" value="Urdu">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">uz</textarea>
+                                        <input type="submit" name="lang" value="Uzbek">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">vi</textarea>
+                                        <input type="submit" name="lang" value="Vietnamese">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">cy</textarea>
+                                        <input type="submit" name="lang" value="Welsh">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">xh</textarea>
+                                        <input type="submit" name="lang" value="Xhosa">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">yi</textarea>
+                                        <input type="submit" name="lang" value="Yiddish">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">yo</textarea>
+                                        <input type="submit" name="lang" value="Yoruba">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2" action="/lang"
+                                        method="post">
+                                        <textarea name="lang" class="hidden">zu</textarea>
+                                        <input type="submit" name="lang" value="Zulu">
+                                    </form>
+                                </li>
+                                <!-- Other options... -->
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <form class=" flex flex-col md:gap-y-12 gap-y-2" id="myForm" action="/translate" method="post">
+                    <textarea
+                        class="bg-[#2d2b2b] w-60 h-32 md:w-80 md:h-48 lg:w-[30rem] xl:w-[40rem] xl:h-72 p-2 border-white border resize-none outline-white text-[#acd25f]"
+                        name="from" id="from" placeholder="Write your text here......📝"><% if(locals.text) %>
+                        <%= locals.text %></textarea>
+                    <input
+                        class="w-40 md:w-52 text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-4 py-2 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+                        type="submit" id='submit' value="Translate Your Text">
+                </form>
+            </div>
+            <div class="translate-to">
+                <div class="translate-to-button flex gap-2">
+                    <p class="font-serif text-white my-2 lg:text-xl">Translate Into:</p>
+                    <!-- component -->
+                    <div class="dropdown-container">
+                        <button
+                            class="languages font-serif text-white my-2 lg:text-xl underline underline-offset-4 font-medium rounded-lg text-center inline-flex items-center"
+                            type="button" data-dropdown-toggle="dropdown">
+                            <% if(locals.lang2){ %>
+                                <%= locals.lang2 %>
+                                    <% }else{ %>
+                                        Select Language!
+                                        <%} %><svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 9l-7 7-7-7"></path>
+                                            </svg>
+                        </button>
+
+                        <!-- Dropdown menu -->
+                        <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4"
+                            id="dropdown">
+                            <ul class="py-1" aria-labelledby="dropdown">
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">af</textarea>
+                                        <input type="submit" name="convert" value="Afrikaans">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">sq</textarea>
+                                        <input type="submit" name="convert" value="Albanian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">am</textarea>
+                                        <input type="submit" name="convert" value="Amharic">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ar</textarea>
+                                        <input type="submit" name="convert" value="Arabic">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">hy</textarea>
+                                        <input type="submit" name="convert" value="Armenian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">az</textarea>
+                                        <input type="submit" name="convert" value="Azeerbaijani">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ba</textarea>
+                                        <input type="submit" name="convert" value="Bashkir">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">eu</textarea>
+                                        <input type="submit" name="convert" value="Basque">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">be</textarea>
+                                        <input type="submit" name="convert" value="Belarusian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">bn</textarea>
+                                        <input type="submit" name="convert" value="Bengali">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">bs</textarea>
+                                        <input type="submit" name="convert" value="Bosnian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">bg</textarea>
+                                        <input type="submit" name="convert" value="Bulgarian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">my</textarea>
+                                        <input type="submit" name="convert" value="Burmese">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ca</textarea>
+                                        <input type="submit" name="convert" value="Catalan">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ceb</textarea>
+                                        <input type="submit" name="convert" value="Cebuano">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ny</textarea>
+                                        <input type="submit" name="convert" value="Chichewa">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">zh-CN</textarea>
+                                        <input type="submit" name="convert" value="Chinese (Simplified)">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">zh-TW</textarea>
+                                        <input type="submit" name="convert" value="Chinese (Traditional)">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">co</textarea>
+                                        <input type="submit" name="convert" value="Corsican">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">hr</textarea>
+                                        <input type="submit" name="convert" value="Croatian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">cs</textarea>
+                                        <input type="submit" name="convert" value="Czech">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">da</textarea>
+                                        <input type="submit" name="convert" value="Danish">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">nl</textarea>
+                                        <input type="submit" name="convert" value="Dutch">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">en</textarea>
+                                        <input type="submit" name="convert" value="English">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">eo</textarea>
+                                        <input type="submit" name="convert" value="Esperanto">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">et</textarea>
+                                        <input type="submit" name="convert" value="Estonian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">fi</textarea>
+                                        <input type="submit" name="convert" value="Finnish">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">fr</textarea>
+                                        <input type="submit" name="convert" value="French">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">fy</textarea>
+                                        <input type="submit" name="convert" value="Frisian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">gl</textarea>
+                                        <input type="submit" name="convert" value="Galician">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ka</textarea>
+                                        <input type="submit" name="convert" value="Georgian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">de</textarea>
+                                        <input type="submit" name="convert" value="German">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">el</textarea>
+                                        <input type="submit" name="convert" value="Greek">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">gu</textarea>
+                                        <input type="submit" name="convert" value="Gujarati">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ht</textarea>
+                                        <input type="submit" name="convert" value="Haitian Creole">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ha</textarea>
+                                        <input type="submit" name="convert" value="Hausa">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">haw</textarea>
+                                        <input type="submit" name="convert" value="Hawaiian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">iw</textarea>
+                                        <input type="submit" name="convert" value="Hebrew">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">mrj</textarea>
+                                        <input type="submit" name="convert" value="Hill Mari">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">hi</textarea>
+                                        <input type="submit" name="convert" value="Hindi">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">hmn</textarea>
+                                        <input type="submit" name="convert" value="Hmong">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">hu</textarea>
+                                        <input type="submit" name="convert" value="Hungarian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">is</textarea>
+                                        <input type="submit" name="convert" value="Icelandic">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ig</textarea>
+                                        <input type="submit" name="convert" value="Igbo">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">id</textarea>
+                                        <input type="submit" name="convert" value="Indonesian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ga</textarea>
+                                        <input type="submit" name="convert" value="Irish">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">it</textarea>
+                                        <input type="submit" name="convert" value="Italian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ja</textarea>
+                                        <input type="submit" name="convert" value="Japanese">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">jw</textarea>
+                                        <input type="submit" name="convert" value="Javanese">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">kn</textarea>
+                                        <input type="submit" name="convert" value="Kannada">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">kk</textarea>
+                                        <input type="submit" name="convert" value="Kazakh">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">km</textarea>
+                                        <input type="submit" name="convert" value="Khmer">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ko</textarea>
+                                        <input type="submit" name="convert" value="Korean">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ku</textarea>
+                                        <input type="submit" name="convert" value="Kurdish">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ky</textarea>
+                                        <input type="submit" name="convert" value="Kyrgyz">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">lo</textarea>
+                                        <input type="submit" name="convert" value="Lao">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">la</textarea>
+                                        <input type="submit" name="convert" value="Latin">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">lv</textarea>
+                                        <input type="submit" name="convert" value="Latvian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">lt</textarea>
+                                        <input type="submit" name="convert" value="Lithuanian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">lb</textarea>
+                                        <input type="submit" name="convert" value="Luxembourgish">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">mk</textarea>
+                                        <input type="submit" name="convert" value="Macedonian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">mg</textarea>
+                                        <input type="submit" name="convert" value="Malagasy">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ms</textarea>
+                                        <input type="submit" name="convert" value="Malay">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ml</textarea>
+                                        <input type="submit" name="convert" value="Malayalam">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">mt</textarea>
+                                        <input type="submit" name="convert" value="Maltese">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">mi</textarea>
+                                        <input type="submit" name="convert" value="Maori">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">mr</textarea>
+                                        <input type="submit" name="convert" value="Marathi">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">mhr</textarea>
+                                        <input type="submit" name="convert" value="Mari">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">mn</textarea>
+                                        <input type="submit" name="convert" value="Mongolian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ne</textarea>
+                                        <input type="submit" name="convert" value="Nepali">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">no</textarea>
+                                        <input type="submit" name="convert" value="Norwegian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ps</textarea>
+                                        <input type="submit" name="convert" value="Pashto">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">pap</textarea>
+                                        <input type="submit" name="convert" value="Papiamento">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">fa</textarea>
+                                        <input type="submit" name="convert" value="Persian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">pl</textarea>
+                                        <input type="submit" name="convert" value="Polish">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">pt</textarea>
+                                        <input type="submit" name="convert" value="Portuguese">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">pa</textarea>
+                                        <input type="submit" name="convert" value="Punjabi">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ro</textarea>
+                                        <input type="submit" name="convert" value="Romanian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ru</textarea>
+                                        <input type="submit" name="convert" value="Russian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">sm</textarea>
+                                        <input type="submit" name="convert" value="Samoan">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">gd</textarea>
+                                        <input type="submit" name="convert" value="Scots Gaelic">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">sr</textarea>
+                                        <input type="submit" name="convert" value="Serbian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">st</textarea>
+                                        <input type="submit" name="convert" value="Sesotho">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">sn</textarea>
+                                        <input type="submit" name="convert" value="Shona">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">sd</textarea>
+                                        <input type="submit" name="convert" value="Sindhi">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">si</textarea>
+                                        <input type="submit" name="convert" value="Sinhala">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">sk</textarea>
+                                        <input type="submit" name="convert" value="Slovak">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">sl</textarea>
+                                        <input type="submit" name="convert" value="Slovenian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">so</textarea>
+                                        <input type="submit" name="convert" value="Somali">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">es</textarea>
+                                        <input type="submit" name="convert" value="Spanish">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">su</textarea>
+                                        <input type="submit" name="convert" value="Sundanese">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">sw</textarea>
+                                        <input type="submit" name="convert" value="Swahili">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">sv</textarea>
+                                        <input type="submit" name="convert" value="Swedish">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">tg</textarea>
+                                        <input type="submit" name="convert" value="Tajik">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ta</textarea>
+                                        <input type="submit" name="convert" value="Tamil">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">tt</textarea>
+                                        <input type="submit" name="convert" value="Tatar">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">te</textarea>
+                                        <input type="submit" name="convert" value="Telugu">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">th</textarea>
+                                        <input type="submit" name="convert" value="Thai">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">bo</textarea>
+                                        <input type="submit" name="convert" value="Tibetan">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ti</textarea>
+                                        <input type="submit" name="convert" value="Tigrinya">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">to</textarea>
+                                        <input type="submit" name="convert" value="Tonga">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">tr</textarea>
+                                        <input type="submit" name="convert" value="Turkish">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">tk</textarea>
+                                        <input type="submit" name="convert" value="Turkmen">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">uk</textarea>
+                                        <input type="submit" name="convert" value="Ukrainian">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ur</textarea>
+                                        <input type="submit" name="convert" value="Urdu">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">ug</textarea>
+                                        <input type="submit" name="convert" value="Uyghur">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">uz</textarea>
+                                        <input type="submit" name="convert" value="Uzbek">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">vi</textarea>
+                                        <input type="submit" name="convert" value="Vietnamese">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">cy</textarea>
+                                        <input type="submit" name="convert" value="Welsh">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">xh</textarea>
+                                        <input type="submit" name="convert" value="Xhosa">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">yi</textarea>
+                                        <input type="submit" name="convert" value="Yiddish">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">yo</textarea>
+                                        <input type="submit" name="convert" value="Yoruba">
+                                    </form>
+                                </li>
+                                <li>
+                                    <form class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                                        action="/lang2" method="post">
+                                        <textarea name="convert" class="hidden">zu</textarea>
+                                        <input type="submit" name="convert" value="Zulu">
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="flex flex-col md:gap-y-12 gap-y-2" action="/translate" method="post">
+                    <textarea readonly
+                        class="bg-[#2d2b2b] w-60 h-32 md:w-80 md:h-48 lg:w-[30rem] xl:w-[40rem] xl:h-72 p-2 border-white border resize-none outline-white text-[#acd25f]"
+                        name="to" id="to" placeholder="Your translated text will appear here💝......"><% if(locals.translatedText) %>
+                        <%= locals.translatedText %>
+                    </textarea>
+                    <input
+                        class="w-40 md:w-52 text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-4 py-2 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+                        type="submit" id='copy' value="Copy Translated Text">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+</body>
+
+</html>

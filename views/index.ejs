@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/output.css">
     <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
     <title>Interpret Lingo</title>
 </head>
@@ -880,13 +880,12 @@
                             </ul>
                         </div>
                     </div>
-
                 </div>
                 <form class=" flex flex-col md:gap-y-12 gap-y-2" id="myForm" action="/translate" method="post">
                     <textarea
                         class="bg-[#2d2b2b] w-60 h-32 md:w-80 md:h-48 lg:w-[30rem] xl:w-[40rem] xl:h-72 p-2 border-white border resize-none outline-white text-[#acd25f]"
-                        name="from" id="from" placeholder="Write your text here......📝"><% if(locals.text) %>
-                        <%= locals.text %></textarea>
+                        name="from" id="from"
+                        placeholder="Write your text here......📝"><%= locals.text ? locals.text : '' %></textarea>
                     <input
                         class="w-40 md:w-52 text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-4 py-2 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
                         type="submit" id='submit' value="Translate Your Text">
@@ -1711,20 +1710,27 @@
                     </div>
                 </div>
 
-                <form class="flex flex-col md:gap-y-12 gap-y-2" action="/translate" method="post">
+                <form class="flex flex-col md:gap-y-12 gap-y-2" action="/copy-text" method="post">
                     <textarea readonly
                         class="bg-[#2d2b2b] w-60 h-32 md:w-80 md:h-48 lg:w-[30rem] xl:w-[40rem] xl:h-72 p-2 border-white border resize-none outline-white text-[#acd25f]"
-                        name="to" id="to" placeholder="Your translated text will appear here💝......"><% if(locals.translatedText) %>
-                        <%= locals.translatedText %>
-                    </textarea>
+                        name="to" id="to"
+                        placeholder="Your translated text will appear here💝......"><%= locals.translatedText ? locals.translatedText : '' %></textarea>
                     <input
                         class="w-40 md:w-52 text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-4 py-2 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
-                        type="submit" id='copy' value="Copy Translated Text">
+                        type="submit" onclick="triggerExample()" id='copy' value="Copy Translated Text">
+                    <script>
+                        function triggerExample() {
+                            const element = document.querySelector('#to');
+                            element.select();
+                            // element.setSelectionRange(0, 99999);
+                            document.execCommand('copy');
+                        }
+                    </script>
                 </form>
             </div>
         </div>
     </div>
-    <script script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+    <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
 </body>
 
 </html>

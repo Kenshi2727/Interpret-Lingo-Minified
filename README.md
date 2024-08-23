@@ -6,6 +6,7 @@ IN CASE YOU GET AN ERROR THAT MOST PROBABLY THE RATE LIMIT OF API IS EXHAUSTED. 
 Error code-429
 ```
 <hr>
+
 ```
 Mozilla Public License Version 2.0
 ==================================

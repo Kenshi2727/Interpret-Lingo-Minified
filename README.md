@@ -1,4 +1,4 @@
-# <a href="https://interpret-lingo-minified-5.onrender.com">Link to site.....</a>
+# <a href="https://interpret-lingo-minified-5.onrender.com">Link to site.....(may get a delay because of hosting platform)</a>
 ## Welcome to Interpret Lingo where you can translate in 100+ languages...
 
 ```

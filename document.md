@@ -1,4 +1,10 @@
 ```
+Changes made after railways deployment-
+All scripts that were made for tailwindcss were removed as deployment site only contains vanilla css.
+RESULT-site was successfully deployed on railways platform!
+```
+
+```
 Here are the IDs that were changed:
 
 1. **Dropdown Toggle IDs:**

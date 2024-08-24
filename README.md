@@ -1,9 +1,11 @@
-# <a href="https://interpret-lingo-minified-5.onrender.com">Link to site.....(may get a delay because of hosting platform)</a>
-## Welcome to Interpret Lingo where you can translate in 100+ languages...
+# <a href="https://interpret-lingo-minified-production-5683.up.railway.app/">Visit us by clciking here!😍</a>
+## <a href="https://interpret-lingo-minified-5.onrender.com">Click here IF ABOVE LINK IS DOWN.....(may get a delay because of hosting platform)</a>
+### Welcome to Interpret Lingo where you can translate in 100+ languages...
 
 ```
-IN CASE YOU GET AN ERROR THAT MOST PROBABLY THE RATE LIMIT OF API IS EXHAUSTED. IN THAT CASE PLEASE VISIT WEBSITE LATER!
+IN CASE YOU GET AN ERROR THEN MOST PROBABLY THE RATE LIMIT OF API IS EXHAUSTED. IN THAT CASE PLEASE VISIT WEBSITE LATER!
 Error code-429
+Error msg-"Some error has occured!😭"
 ```
 <hr>
 

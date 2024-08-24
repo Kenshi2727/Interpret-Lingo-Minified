@@ -4,9 +4,6 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "start": "npx tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",

@@ -6,6 +6,7 @@
 IN CASE YOU GET AN ERROR THEN MOST PROBABLY THE RATE LIMIT OF API IS EXHAUSTED. IN THAT CASE PLEASE VISIT WEBSITE LATER!
 Error code-429
 Error msg-"Some error has occured!😭"
+API hard limit-50/day
 ```
 <hr>
 

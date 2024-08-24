@@ -1,4 +1,4 @@
-# <a href="https://interpret-lingo-minified-production-5683.up.railway.app/">Visit us by clciking here!😍</a>
+# <a href="https://interpret-lingo-minified-production-5683.up.railway.app/">Visit us by clicking here!😍</a>
 ## <a href="https://interpret-lingo-minified-5.onrender.com">Click here IF ABOVE LINK IS DOWN.....(may get a delay because of hosting platform)</a>
 ### Welcome to Interpret Lingo where you can translate in 100+ languages...
 
